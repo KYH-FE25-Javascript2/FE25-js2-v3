@@ -1,0 +1,707 @@
+🧭 Kursintro, Teori: Bibliotek, Ramverk & SPA, Intro till React
+
+⏰ Tid: 08.30–12.00
+📚 Kurs: JavaScript 2, 30yhp
+📅 Vecka 3 – Tisdag: 2026-01-13
+🎓 Klass: FE25, skola: KYH
+
+--------------------------------------------------
+--------------------------------------------------
+
+🎯 Lektionsmål
+
+Efter lektionen ska studenterna kunna:
+
+✅ Förklara skillnaden mellan JavaScript-bibliotek och ramverk
+✅ Förklara vad en Single Page Application (SPA) är
+✅ Förstå varför React används i modern frontend
+✅ Skapa och starta ett React-projekt med Vite
+✅ Identifiera grundläggande delar i ett React-projekt
+
+--------------------------------------------------
+--------------------------------------------------
+
+📝 Lektionsplanering
+
+– Kursintro & upplägg - GÅ igenom Kursplanen och kursplaneringen.
+- Power Point:
+    – Teori: Bibliotek vs Ramverk
+    – Teori: SPA – vad & varför
+    – Intro till React & komponenttänk
+– Code-along: Skapa första React-appen med Vite
+– Sammanfattning & preview onsdag
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 PowerPoint – Talarmanus (Slide 1–59)
+
+(Slides 18–22 (runtime/V8/stack/MERN): håll detta superkort (1–2 min totalt).
+Annars tappar du tid som behövs för Vite + code-along.
+
+Slides 30–35 (package.json/flags/install/övning/läxa): du kan visa dem men inte prata länge.
+De behöver bara bygga trygghet: “det här finns – vi återkommer”.)
+
+--------------------------------------------------
+
+🟨 Slide 1 – Kurs JavaScript 2: Översikt
+🗣️
+“Den här kursen handlar om hur vi bygger moderna frontend-applikationer.
+Vi går från vanlig JavaScript på en sida till mer strukturerade, komponentbaserade appar.”
+
+🗣️
+“Ni kommer känna igen JavaScript – men sättet vi organiserar koden kommer vara nytt.”
+
+--------------------------------------------------
+
+🟨 Slide 2 – Vad är ett JavaScript-bibliotek?
+🗣️
+“Ett bibliotek är färdig kod som hjälper oss lösa ett specifikt problem.
+Till exempel datum, animationer, formulärvalidering eller API-anrop.”
+
+🗣️
+“Det viktiga: vi använder biblioteket när vi vill.
+Det är vi som styr.”
+
+--------------------------------------------------
+
+🟨 Slide 3 – Övning: bibliotek
+🗣️
+“Tänk på bibliotek som verktyg.
+Vilka problem slipper vi lösa själva genom att använda bibliotek?”
+
+--------------------------------------------------
+
+🟨 Slide 4 – Vad är ett JavaScript-ramverk?
+🗣️
+“Ett ramverk är mer än kod – det är ett arbetssätt/en hel verkstad.
+Det bestämmer struktur, mappindelning och hur applikationen ska byggas.”
+
+🗣️
+“Här är det ofta ramverket som kör vår kod – inte tvärtom.”
+
+--------------------------------------------------
+
+🟨 Slide 5 – Det finns flera frontend-ramverk
+🗣️
+“Det finns flera alternativ.
+React, Vue och Angular är de vanligaste.”
+
+🗣️
+“Vilket man väljer beror på team, projektets storlek och krav.”
+
+--------------------------------------------------
+
+🟨 Slide 6 – Vue
+🗣️
+“Vue är ofta populärt för mindre till medelstora projekt.
+Lätt att komma igång med, tydlig struktur.”
+
+--------------------------------------------------
+
+🟨 Slide 7 – Angular
+🗣️
+“Angular är ett fullskaligt ramverk.
+Det används ofta i stora enterprise-system.”
+
+--------------------------------------------------
+
+🟨 Slide 8 – React
+🗣️
+“React används enormt mycket i branschen.
+Flexibelt, komponentbaserat och med stort ekosystem.”
+
+“React är ett JavaScript-bibliotek som används som ett ramverk i praktiken.”
+
+“React låter oss bygga UI med komponenter – små återanvändbara delar.”
+
+--------------------------------------------------
+
+🟨 Slide 9 – State of JavaScript
+🗣️
+“Den här statistiken visar vad som används i verkligheten.
+React dominerar frontend-marknaden.”
+
+--------------------------------------------------
+
+🟨 Slide 10 – Skillnaden mellan bibliotek och ramverk
+🗣️
+“Ett bibliotek är som ett verktyg.
+Ett ramverk är som en hel verkstad.”
+
+🗣️
+“Ju större och mer långlivad applikationen är,
+desto större nytta har vi av ett ramverk.”
+
+--------------------------------------------------
+
+🟨 Slide 11 – (Bildslide)
+🗣️
+“Den här bilden illustrerar just det vi pratade om:
+vem som styr flödet – du eller ramverket.”
+
+--------------------------------------------------
+
+🟨 Slide 12 – Övning: ramverk
+🗣️
+“Diskutera: vad menar tweeten?
+Varför kan ramverk kännas ‘jobbiga’ i början?”
+
+--------------------------------------------------
+
+🟨 Slide 13 – Vad är SPA?
+🗣️
+“SPA står för Single Page Application.
+Det betyder att vi laddar en sida – en gång.”
+
+🗣️
+“Efter det uppdateras innehållet dynamiskt med JavaScript.”
+
+--------------------------------------------------
+
+🟨 Slide 14 – SPA vs traditionell webb
+🗣️
+“I traditionella webbplatser laddas en ny HTML-sida vid varje klick.”
+
+🗣️
+“I en SPA uppdateras bara det som förändras i gränssnittet.”
+Det ger snabbare och mer app-lik upplevelse.”
+
+--------------------------------------------------
+
+🟨 Slide 15 – Förutsättningar
+🗣️
+“För att jobba med ramverk behöver vi Node.js och npm.
+Inte för att skriva backend – utan för verktygen.”
+
+--------------------------------------------------
+
+🟨 Slide 16 – (Bildslide)
+🗣️
+“Node.js är grunden för mycket av vår utvecklingsmiljö.”
+
+--------------------------------------------------
+
+🟨 Slide 17 – Node.js
+🗣️
+“Node.js gör så att JavaScript kan köras utanför webbläsaren.”
+
+🗣️
+“Det betyder att vi kan köra JavaScript i terminalen.”
+
+--------------------------------------------------
+
+🟨 Slide 18 – Runtime environment
+🗣️
+“En runtime är en miljö där kod körs.
+Webbläsaren är en runtime – Node.js är en annan.”
+
+--------------------------------------------------
+
+🟨 Slide 19 – V8 Engine
+🗣️
+“Node.js använder samma JavaScript-motor som Chrome.”
+
+--------------------------------------------------
+
+🟨 Slide 20 – Node.js: varför användbart?
+🗣️
+“Det gör att vi kan använda JavaScript för både frontend och backend.”
+
+🗣️
+“Men idag använder vi Node för utvecklingsverktyg – inte backend.”
+
+--------------------------------------------------
+
+🟨 Slide 21 – Vart i stacken passar Node.js?
+🗣️
+“Node.js ligger på serversidan.
+Men det påverkar även hur vi bygger frontend.”
+
+--------------------------------------------------
+
+🟨 Slide 22 – MERN-stacken
+🗣️
+“Det här är ett exempel på en vanlig tech-stack.”
+
+🗣️
+“Vi fokuserar på React-delen just nu.”
+
+--------------------------------------------------
+
+🟨 Slide 23 – Node.js & npm
+🗣️
+“Idag använder vi Node.js för att installera npm-paket.”
+
+--------------------------------------------------
+
+🟨 Slide 24 – (Bildslide: npm-logga)
+🗣️
+“npm är ekosystemet runt JavaScript-paket.”
+
+--------------------------------------------------
+
+🟨 Slide 25 – Node package manager
+🗣️
+“npm innehåller färdig kod som vi kan återanvända.”
+
+--------------------------------------------------
+
+🟨 Slide 26 – Paket vs bibliotek
+🗣️
+“Alla bibliotek är paket – men alla paket är inte bibliotek.”
+
+--------------------------------------------------
+
+🟨 Slide 27 – npm
+🗣️
+“npm är verktyget som laddar ner och hanterar paket.”
+
+--------------------------------------------------
+
+🟨 Slide 28 – npm & package.json
+🗣️
+“package.json är hjärtat i projektet.”
+
+--------------------------------------------------
+
+🟨 Slide 29 – npmjs.com
+🗣️
+“Det är här vi hittar paket – ungefär som App Store för JavaScript.”
+
+--------------------------------------------------
+
+🟨 Slide 30 – package.json
+🗣️
+“Detta är projektets inställningsfil.”
+
+--------------------------------------------------
+
+🟨 Slide 31 – package.json: innehåll
+🗣️
+“Här listas alla dependencies och scripts.”
+
+--------------------------------------------------
+
+🟨 Slide 32 – Flaggor
+🗣️
+“Flaggor styr hur paket installeras.”
+
+--------------------------------------------------
+
+🟨 Slide 33 – Installera Node.js
+🗣️
+“node -v visar om Node är installerat.”
+
+--------------------------------------------------
+
+🟨 Slide 34 – Övning
+🗣️
+“Den här övningen gör ni lugnt senare.”
+
+--------------------------------------------------
+
+🟨 Slide 35 – Läxa
+🗣️
+“Vi pratar mer om moduler senare.”
+
+--------------------------------------------------
+
+🟨 Slide 36 – React (avdelare)
+🗣️
+“Nu går vi över till React.”
+
+--------------------------------------------------
+
+🟨 Slide 37 – React är komponentbaserat
+🗣️
+“React bygger UI med små återanvändbara delar.”
+
+--------------------------------------------------
+
+🟨 Slide 38 – Att tänka i komponenter
+🗣️
+“Vi delar upp gränssnittet i logiska delar.”
+
+--------------------------------------------------
+
+🟨 Slide 39 – Virtual DOM
+🗣️
+“React uppdaterar bara det som ändras.”
+
+--------------------------------------------------
+
+🟨 Slide 40 – Virtual DOM (fördjupning)
+🗣️
+“React jämför gammalt och nytt UI och applicerar bara skillnaden.”
+
+--------------------------------------------------
+
+🟨 Slide 41 – (Bildslide)
+🗣️
+“En visuell bild av Virtual DOM-tänket.”
+
+--------------------------------------------------
+
+🟨 Slide 42 – Nu testar vi React!
+🗣️
+“Nu ska vi se hur allt detta ser ut i praktiken.”
+
+--------------------------------------------------
+
+🟨 Slide 43 – (Bildslide)
+🗣️
+“Nu byter vi fokus till verktyg.”
+
+--------------------------------------------------
+
+🟨 Slide 44 – React & Vite
+🗣️
+“React är ritningen – Vite är verkstaden.”
+
+--------------------------------------------------
+
+🟨 Slide 45 – Vite
+🗣️
+“Vite är ett modernt utvecklingsverktyg.”
+
+--------------------------------------------------
+
+🟨 Slide 46 – Vite
+🗣️
+“Snabb start, snabb reload.”
+
+--------------------------------------------------
+
+🟨 Slide 47 – Vite vs Node.js
+🗣️
+“Node är plattformen – Vite är verktyget.”
+
+--------------------------------------------------
+
+🟨 Slide 48 – Vite i React-projekt
+🗣️
+“Vi använder Vite för att skapa React-projekt.”
+
+--------------------------------------------------
+
+🟨 Slide 49 – Skapa projekt
+🗣️
+“Detta kommando skapar hela projektet.”
+
+--------------------------------------------------
+
+🟨 Slide 50 – Vite: Steg 1–4
+🗣️
+“Detta är hela processen i korthet.”
+
+--------------------------------------------------
+
+🟨 Slide 51 – Steg 1
+🗣️
+“Vi skapar projektet.”
+
+--------------------------------------------------
+
+🟨 Slide 52 – Steg 2
+🗣️
+“Vi städar bort boilerplate.”
+
+--------------------------------------------------
+
+🟨 Slide 53 – Steg 3
+🗣️
+“Vi skriver vår första komponent.”
+
+--------------------------------------------------
+
+🟨 Slide 54 – Steg 4
+🗣️
+“Vi startar utvecklingsservern.”
+
+--------------------------------------------------
+
+🟨 Slide 55 – Grattis!
+🗣️
+“Nu kör React.”
+
+--------------------------------------------------
+
+🟨 Slide 56 – Hur fungerar React?
+🗣️
+“Nu tittar vi på strukturen.”
+
+--------------------------------------------------
+
+🟨 Slide 57 – React mappar
+🗣️
+“src är där vi jobbar.”
+
+--------------------------------------------------
+
+🟨 Slide 58 – React filer
+🗣️
+“main.jsx startar appen.”
+
+--------------------------------------------------
+
+🟨 Slide 59 – Kommande slides
+🗣️
+“Resten tar vi onsdag och torsdag.”
+
+--------------------------------------------------
+--------------------------------------------------
+
+OBS SKAPA NY TISDAGS BRANCH FÖR CODE ALONGS.. LÅT AGENDOR VARA KVAR, ENSAMMA I MAIN.
+
+💻 Code-along – Skapa första React-appen med Vite
+
+🎯 Syfte:
+Inte att memorera kod – utan att se hur ett React-projekt kommer till
+och hur delarna hänger ihop.
+
+🗣️
+“Nu vill jag att ni tittar mer än skriver.
+Ni får gärna testa själva sen – men just nu är fokus förståelse.”
+
+Om någon inte har Node installerat – det är helt okej.
+Ni har inte gjort något fel.
+Det här är första gången vi lämnar vanilla JavaScript på riktigt.”
+👉 Installera i lugn och ro efter lektionen eller imorgon
+
+”Vill ni snabbt kolla om ni har Node:
+skriv node -v i terminalen.
+
+”Hittills har ni jobbat med JavaScript i webbläsaren.
+Då är det webbläsaren som kör JavaScript.”
+
+”Node.js gör så att JavaScript kan köras utanför webbläsaren – till exempel i terminalen.”
+
+”Vi använder inte Node för att skriva backend just nu.
+Vi använder Node för att:
+– starta projekt
+– installera verktyg
+– köra utvecklingsservern”
+
+”React kräver inte Node i produktion –
+men vi behöver Node när vi utvecklar.”
+
+--------------------------------------------------
+
+📂 Steg 0 – Starta repo (lokalt)
+
+1. Skapa en ny mapp på datorn, t.ex:
+   FE25-react-intro
+
+2. Öppna mappen i VS Code
+
+3. Öppna terminalen i VS Code
+
+--------------------------------------------------
+
+🧪 Steg 1 – Skapa React-projektet med Vite
+
+I terminalen:
+
+npm create vite@latest
+
+• Projekt-namn: react-intro
+• Välj: React
+• Välj: JavaScript
+
+🗣️
+“Detta kommando skapar hela grundstrukturen åt oss.”
+
+--------------------------------------------------
+
+📦 Steg 2 – Installera dependencies
+
+cd react-intro
+npm install
+
+🗣️
+“Nu laddas alla paket som projektet behöver.
+Detta görs bara en gång per projekt.”
+
+--------------------------------------------------
+
+🚀 Steg 3 – Starta utvecklingsservern
+
+npm run dev
+
+🗣️
+“Nu startar vår utvecklingsserver.
+Länken i terminalen öppnas i webbläsaren.”
+
+--------------------------------------------------
+
+📁 Steg 4 – Titta på projektstrukturen
+
+Visa i VS Code:
+
+• node_modules/ (rör vi inte)
+• public/
+• src/
+  – main.jsx
+  – App.jsx
+
+------------
+
+- Projektets rotmapp (react-intro)
+”Det här är projektets rotmapp.
+Allt som hör till vår app finns här.”
+
+- ”node_modules innehåller all kod vi har installerat via npm.”
+”Vi:
+– läser inte här
+– ändrar inte här
+– skickar inte med denna mapp till GitHub”
+
+”Om ni tar bort node_modules kan den återskapas med npm install.”
+
+------------
+
+- ”package.json är projektets konfigurationsfil.”
+
+”Här står:
+– projektets namn
+– vilka paket som används
+– vilka script vi kan köra”
+
+”När vi skriver npm run dev –
+då är det ett script som är definierat här.”
+
+------------
+
+- ”src är där vi jobbar.
+Det är här vår kod bor.”
+
+”Om ni är osäkra på var ni ska skriva kod –
+då är svaret nästan alltid: src.”
+
+------------
+
+- ”main.jsx är startpunkten för React.”
+”Den kopplar React till HTML-sidan.”
+”Vi ändrar sällan här – den bara startar appen.”
+
+------------
+
+- “App.jsx är vår rotkomponent, vår första komponent.”
+”Det är här vi börjar bygga vår app.”
+
+”Allt vi ser i webbläsaren just nu kommer från App.jsx.”
+
+------------
+
+- ”public innehåller statiska filer – till exempel bilder eller favicon.”
+”Vi använder den sällan i början.”
+
+------------
+
+- Övriga mappar och filer (KAN VÄNTA)
+
+”Vi kommer senare prata om:
+– fler komponenter
+– props
+– state
+– routing
+– API:er”
+
+”Ni behöver inte förstå allt idag.
+React byggs lager för lager.”
+
+--------------------------------------------------
+
+✂️ Steg 5 – Rensa App.jsx
+
+Öppna src/App.jsx
+
+Ta bort allt innehåll och skriv:
+
+function App() {
+  return <h1>Hello React</h1>;
+}
+
+export default App;
+
+🗣️
+“Det här är React i sin enklaste form:
+en funktion som returnerar UI.”
+
+--------------------------------------------------
+
+🔄 Steg 6 – Kontrollera i webbläsaren
+
+• Sidan uppdateras automatiskt
+• Ingen reload behövs
+
+🗣️
+“Detta är en av styrkorna med React + Vite.”
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧪 Testa code-along-koden – Guide
+
+✅ Kontrollera:
+
+• Terminalen visar inga röda fel
+• Webbläsaren visar texten “Hello React”
+• Ändring i App.jsx uppdateras direkt i webbläsaren
+
+--------------------------------------------------
+
+🔧 Vanliga felsökningspunkter:
+
+• Glömde du köra `npm install`?
+• Är du i rätt mapp (react-intro)?
+• Är det App.jsx du redigerar – inte main.jsx?
+• Har du sparat filen?
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧠 Självständiga övningar
+
+Se Power pointen slides: 
+
+- 34
+
+- 49-54
+
+---
+
+- Utgå från er nya React-app:
+
+1) Ändra rubriken i App.jsx (valfri text)
+2) Lägg till en <p> under rubriken med en kort presentation av dig själv
+3) (Bonus) Lägg till en <ul> med tre saker du vill kunna efter vecka 3
+
+---
+
+Fortsätt med Studieguiden
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 Reflektion & frågor:
+
+1) 2 min – skriv enskilt:
+- Vad var tydligast idag?
+- Vad var mest förvirrande?
+
+2) 5 min – diskutera i smågrupp:
+- Varför använder vi ramverk?
+- Vad betyder SPA i praktiken?
+
+3) 3–5 min – helklass:
+- 1–2 grupper delar en insikt + en fråga
+
+(Övnignar från Power pointen, slides nummer:
+2, 12) 
+
+(Denna slide övning hoppar vi över: 
+35)
+
+“Onsdag går vi vidare med JSX, props och komponenter på riktigt.”
