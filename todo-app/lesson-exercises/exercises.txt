@@ -1,0 +1,36 @@
+Självständiga övningar – Todo App
+
+🟢 Nivå 1
+– Lägg till en ny TodoItem manuellt
+– Ändra texten via props
+
+🟡 Nivå 2
+– Lägg till prop: isDone
+– Visa t.ex. ✅ eller ❌ beroende på värde
+
+Exempel:
+<TodoItem text="Lära React" isDone={true} />
+
+🗣️
+“Vi använder inte detta fullt ut än – det är för tänket.”
+
+🔴 Nivå 3
+– Skicka en array av todos från TodoApp till TodoList
+– Rendera listan med .map()
+– Ingen useState än
+
+--------------------------
+
+Fördjupning / Extra övningar 
+
+Nivå 1
+- Skapa Footer.jsx
+- Skicka prop “year” och visa © {year}
+
+Nivå 2
+- Skapa Product.jsx (title, price)
+- Rendera flera produkter via props
+
+Nivå 3
+- Skapa List.jsx som tar items (array)
+- Rendera med .map() (kom ihåg key)

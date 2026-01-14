@@ -1,0 +1,864 @@
+🧭 React fortsättning – JSX, Funktionella komponenter & Props
+
+⏰ Tid: 08.30–12.00
+📚 Kurs: JavaScript 2, 30 yhp
+📅 Vecka 3 – Onsdag: 2026-01-14
+🎓 Klass: FE25, KYH
+
+--------------------------------------------------
+--------------------------------------------------
+
+🎯 Lektionsmål
+
+Efter lektionen ska studenterna kunna:
+
+✅ Förklara vad JSX är och varför vi använder det
+✅ Skriva enkel JSX och känna till grundregler (1 root, className, { } )
+✅ Skapa och använda funktionella komponenter i React
+✅ Importera/exportera komponenter mellan filer
+✅ Förstå vad props är (data från parent → child)
+✅ Skicka props till en komponent och använda dem i render
+
+--------------------------------------------------
+--------------------------------------------------
+
+📝 Lektionsplanering (08.30–12.00)
+
+08.30–08.40  Start & repetition från tisdag
+08.40–09.25  Teori + demo: JSX (regler + exempel)
+09.25–09.35  Paus
+
+09.35–10.20  Code-along 1: Komponenttänk + skapa första egna komponenter
+10.20–10.30  Paus
+
+10.30–11.15  Code-along 2: Props – varför & hur (parent → child)
+11.15–11.35  Självständiga övningar (Todo-app, 3 nivåer)  
+11.35–12.00  Reflektion, Q&A + preview torsdag (useState + events)
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧠 Inledning & repetition (talarmanus)
+
+🗣️ “Igår såg vi helheten: SPA, React, Vite – och vi startade en första app.”
+
+🗣️ “Idag går vi från ‘Hello React’ till att faktiskt bygga UI med komponenter.”
+
+🗣️ “Ni ska inte memorera allt – ni ska känna igen mönster.”
+
+Mini-frågor (2 min):
+- Vad var Vite till för?
+- I vilken fil skrev vi vår första <h1> igår?
+- Vad betyder SPA?
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 PowerPoint (onsdag)
+
+React fortsättning: JSX, Komponenter & Props
+
+Slides 60–105
+
+--------------------------------------------------
+
+🟨 Slide 60 — JSX???
+
+🗣️
+“Det här är ofta första punkten där folk känner:
+‘Vänta… är det här HTML eller JavaScript?’”
+
+🗣️
+“JSX är medvetet provocerande.
+Det bryter mot den gamla regeln:
+HTML här, CSS där, JavaScript någon annanstans.”
+
+🗣️
+“Men det finns en tanke bakom – och den är extremt viktig att förstå.”
+
+🧠 Didaktisk paus
+“Om ni bara minns en sak från JSX idag, så är det:
+👉 JSX är inte HTML.”
+
+--------------------------------------------------
+
+🟨 Slide 61 — JSX 
+
+JS + HTML = JSX
+
+--------------------------------------------------
+
+🟨 Slide 62 — JSX
+
+🗣️
+“JSX är en utökning av JavaScript.”
+
+🗣️
+“React beskriver UI deklarativt – React sköter uppdateringen åt oss.””
+
+🗣️
+“JSX gör det lättare att beskriva hur vårt UI ska se ut.”
+
+Viktig poäng
+“Det här är varför React skalar bättre än vanlig DOM-manipulation.”
+
+🗣️
+“En viktig regel: det som returneras måste ha ett rot-element.”
+
+--------------------------------------------------
+
+🟨 Slide 63 — JSX – hur funkar det?
+
+🗣️
+“JSX är ett uttryck – inte markup.”
+
+“Det betyder att vi kan stoppa in variabler, beräkningar och uttryck direkt i vår UI-beskrivning.”
+
+🗣️
+“Detta gör att logik och presentation kan leva nära varandra,
+istället för att spridas över flera filer och funktioner.”
+
+⚠️ Vanlig missuppfattning
+“Det här är inte samma sak som inline-JS i HTML.”
+
+--------------------------------------------------
+
+🟨 Slide 64 — JSX – hur funkar det?
+
+🗣️
+“JSX är inte HTML – därför finns det små skillnader.”
+
+🗣️
+“Vi skriver className istället för class.”
+
+🗣️
+“HTML-attribut skrivs i camelCase.”
+
+🗣️
+“Ni behöver inte memorera allt – det finns cheatsheets, och felmeddelanden hjälper er.”
+
+--------------------------------------------------
+
+🟨 Slide 65 — Komponenter i React
+
+“Om JSX är hur vi beskriver UI,
+så är komponenter hur vi strukturerar det.”
+
+🗣️
+“React utan komponenttänk är som JavaScript utan funktioner.”
+
+--------------------------------------------------
+
+🟨 Slide 66 — Komponenter i React
+
+🗣️
+“Det finns två typer av komponenter: klasskomponenter och funktionella komponenter.”
+
+🗣️
+“Idag använder vi funktionella komponenter – det är standard i modern React.”
+
+🗣️
+“En komponent är i praktiken en funktion som tar emot data och returnerar UI.”
+
+👉 "React handlar inte om sidor – utan om komponenter.”
+“Ni slutar tänka ‘sida’ och börjar tänka ‘delar’.”
+
+--------------------------------------------------
+
+🟨 Slide 67 — Komponenter i React
+
+🗣️
+“Tänk på komponenter som byggstenar.”
+
+“Bra komponenter gör en sak.”
+
+--------------------------------------------------
+
+🟨 Slide 68 — Skapa en funktionell komponent
+
+🗣️
+“En funktionell komponent är bara en JavaScript-funktion.”
+
+🗣️
+“Den returnerar JSX – alltså det som ska visas.”
+
+🗣️
+“Vi lägger ofta varje komponent i en egen fil för tydlighet.”
+
+--------------------------------------------------
+
+🟨 Slide 69 — Skapa en funktionell komponent
+
+🗣️
+“För att kunna använda komponenten i andra filer måste vi exportera den.”
+
+🗣️
+“Vanligast är export default.”
+
+--------------------------------------------------
+
+🟨 Slide 70 — Skapa en funktionell komponent
+
+🗣️
+“När vi importerar komponenten kan vi använda den som ett eget HTML-element.”
+
+“Det här är varför React-kod ofta är väldigt läsbar.”
+
+“Det är här React börjar kännas kraftfullt.”
+
+--------------------------------------------------
+
+🟨 Slide 71 — Organisera mappar & filer
+
+🗣️
+“När projektet växer är struktur avgörande.”
+
+“Nu har vi pratat om vad komponenter är.
+Nu måste vi prata om hur vi organiserar dem, annars blir React snabbt rörigt.”
+
+🗣️
+“React ger oss väldigt mycket frihet.
+Och frihet är både en styrka och en risk.”
+
+🗣️
+“Det finns inget ‘rätt’ sätt som React tvingar på oss –
+men det finns många dåliga sätt.”
+
+🧠 Pedagogisk poäng
+“Struktur handlar inte om teknik.
+Det handlar om läsbarhet – för dig själv och för andra.”
+
+--------------------------------------------------
+
+🟨 Slide 72 — (bildslide)
+
+🗣️
+“Den här bilden visar ett exempel på hur komponenter kan organiseras.”
+
+🗣️
+“Det viktiga är inte exakt hur mapparna ser ut,
+utan att strukturen speglar hur applikationen är uppbyggd.”
+
+🧠
+“Bra struktur gör att man kan förstå ett projekt genom att bara titta på mapparna.”
+
+--------------------------------------------------
+
+🟨 Slide 73 — Dataflöde
+
+🗣️
+“React bygger på idén om dataflöde.”
+
+🗣️
+“Det är inte kaos – det är inte data som hoppar runt fritt.”
+
+🗣️
+“Tänk er data som vatten i en fors:
+det rinner åt ett håll.”
+
+🧠 Viktig förberedelse
+“Det här är extremt viktigt när vi snart pratar om props och state.”
+
+--------------------------------------------------
+
+🟨 Slide 74 — Separation of concerns
+
+🗣️
+“Separation of concerns betyder:
+en sak per ansvar.”
+
+🗣️
+“En komponent ska inte veta mer än den behöver.”
+
+🗣️
+“Ju mer en komponent vet om andra delar av systemet,
+desto svårare blir den att återanvända.”
+
+🧠
+“Bra React-kod är ofta lite tråkig –
+och det är ett gott tecken.”
+
+“UI, logik och data ska inte blandas hur som helst.”
+
+--------------------------------------------------
+
+🟨 Slide 75 — (bildslide)
+
+🗣️
+“Den här bilden är till för att få er att se struktur, inte läsa kod.”
+
+🗣️
+“Försök identifiera vad som är:
+– helhet
+– delar
+– underdelar”
+
+🧠
+“Detta är exakt samma tänk som vi använder när vi bryter ner UI i komponenter.”
+
+--------------------------------------------------
+
+🟨 Slide 76 — Header / Main / Footer
+
+🗣️
+“Det här är ett klassiskt sätt att dela upp ett gränssnitt/ exempel på komponenttänk.”
+
+🗣️
+“Vi tänker inte i HTML-taggar – vi tänker i roller.”
+
+🗣️
+“Header, Main och Footer är inte teknik –
+det är ansvar.”
+
+“Om du kan rita rutor runt ett UI –
+då kan du bygga det i React.”
+
+--------------------------------------------------
+
+🟨 Slide 77 — Komponenter
+
+🗣️
+“Nu zoomar vi in ännu mer på komponenttänk.”
+
+“Den här bilden visar flöde/förälder - children mellan root och Header, Main och Footer.”
+
+--------------------------------------------------
+
+🟨 Slide 78 — (bildslide)
+
+🗣️
+“Vi försöker zooma in på den översta delan av denna applikation, vad för komponenter kan vi tänka oss?”
+
+--------------------------------------------------
+
+🟨 Slide 79 — Logo / Search / Navigation …
+
+🗣️
+“Här ser ni hur även små delar kan bli egna komponenter.”
+
+“Här börjar vi namnge komponenter.”
+
+🗣️
+“Namngivning är svårt – och viktigt.”
+
+“Bra namn beskriver vad komponenten är,
+inte hur den är byggd.”
+
+🧠
+“Om ett namn känns fel – då är ofta komponenten fel.”
+
+--------------------------------------------------
+
+🟨 Slide 80 — Komponenter
+
+🗣️
+“Det här är fortfarande samma idé – fast uppdelad ännu tydligare.”
+
+“Detta är samma vy – men uppdelad på ett annat sätt.”
+
+“Det finns sällan bara ett rätt svar.”
+
+“Det viktiga är att kunna motivera sitt val.”
+
+--------------------------------------------------
+
+🟨 Slide 81 — (bildslide)
+
+🗣️
+“Titta på strukturen – inte detaljerna.”
+
+--------------------------------------------------
+
+🟨 Slide 82 — Parövning
+
+🗣️
+“Det här är ett sätt att träna komponenttänk utan att skriva kod.”
+
+🗣️
+“Att prata om uppdelning är minst lika viktigt.”
+
+--------------------------------------------------
+
+🟨 Slide 83 — Instagram redesign
+
+“Det här är ett verkligt UI-exempel.”
+
+🗣️
+“Fundera:
+– Vilka är huvudkomponenterna?
+– Vilka är subkomponenter?
+– Vilka komponenter återkommer?”
+
+🧠
+“React handlar mycket mer om struktur än om syntax.”
+
+--------------------------------------------------
+
+🟨 Slide 84 — Nested components
+
+🗣️
+“Komponenter kan ligga inuti andra komponenter.”
+
+🗣️
+“Det här kallas nested components.”
+
+--------------------------------------------------
+
+🟨 Slide 85 — Nested components
+
+“När en komponent används inuti en annan
+skapas en förälder–barn-relation.”
+
+“Detta är grunden för hur data rör sig i React.”
+
+“Det här är extremt vanligt i React.”
+
+--------------------------------------------------
+
+🟨 Slide 86 — (bildslide)
+
+🗣️
+“En visuell representation av nested components.”
+
+--------------------------------------------------
+
+🟨 Slide 87 — PageLayout (kod)
+
+🗣️
+“Det här är ett kodexempel på nested components.”
+
+🗣️
+“Ni behöver inte läsa allt – se strukturen.”
+
+--------------------------------------------------
+
+🟨 Slide 88 — React props
+
+🗣️
+“Props är ett av de viktigaste begreppen i React.”
+
+🗣️
+“Props är ett sätt hur komponenter pratar med varandra.”
+
+--------------------------------------------------
+
+🟨 Slide 89 — React props
+
+🗣️
+“Props står för properties – alltså egenskaper.”
+
+🗣️
+“När du skapar en komponent kan du skicka in data till den.”
+
+“Props är som argument till en funktion –
+fast för UI.”
+
+--------------------------------------------------
+
+🟨 Slide 90 — React props (lego)
+
+🗣️
+“Tänk komponenter som legobitar.”
+
+🗣️
+“Props är instruktionerna som säger hur biten ska användas.”
+
+“Samma legobit – olika användning.”
+
+--------------------------------------------------
+
+🟨 Slide 91 — React props (lego forts.)
+
+🗣️
+“Samma komponent – olika props – olika resultat.”
+
+--------------------------------------------------
+
+🟨 Slide 92 — React props
+
+🗣️
+“Props är data.”
+
+🗣️
+“Komponenten äger inte datan – den får den.”
+
+--------------------------------------------------
+
+🟨 Slide 93 — React props (parent → children)
+
+🗣️
+“En förälder kan skicka props till flera barn.”
+
+🗣️
+“Det här är väldigt vanligt i större appar.”
+
+--------------------------------------------------
+
+🟨 Slide 94 — React props (read-only & top-down)
+
+🗣️
+“Props är read-only.”
+
+🗣️
+“Barnkomponenter kan inte ändra props.”
+
+🗣️
+“Data rör sig uppifrån och ner – top-down.”
+
+--------------------------------------------------
+
+🟨 Slide 95 — React props (App.jsx som rot)
+
+🗣️
+“I de flesta React-appar är App.jsx rotkomponenten.”
+
+🗣️
+“Det gör dataflödet förutsägbart och lättare att felsöka.”
+
+“När något blir konstigt – börja felsöka här.”
+
+--------------------------------------------------
+
+🟨 Slide 96 — React props (återanvändning)
+
+🗣️
+“Props gör komponenter återanvändbara.”
+
+🗣️
+“Samma komponent – olika data.”
+
+“Detta är hela poängen med komponenttänk.”
+
+--------------------------------------------------
+
+🟨 Slide 97 — props: en komponent
+
+🗣️
+“Här ser ni ett enkelt exempel på props i kod.”
+
+--------------------------------------------------
+
+🟨 Slide 98 — props: flera komponenter
+
+🗣️
+“Samma data kan skickas till flera komponenter.”
+
+--------------------------------------------------
+
+🟨 Slide 99 — props steg-för-steg
+
+“Tänk alltid i två steg:
+
+Var finns datan?
+
+Vem behöver den?”
+
+--------------------------------------------------
+
+🟨 Slide 100 — Best practices (props)
+
+🗣️
+“Gör komponenter generella.”
+
+🗣️
+“Tänk återanvändning.”
+
+--------------------------------------------------
+
+🟨 Slide 101 — Best practices
+
+🗣️
+“Dekonstruera props för bättre läsbarhet.”
+
+--------------------------------------------------
+
+🟨 Slide 102 — Best practices
+
+🗣️
+“Det här gör koden renare och lättare att jobba med.”
+
+--------------------------------------------------
+
+🟨 Slide 103 — Best practices (kod)
+
+🗣️
+“Två sätt att skriva samma sak – ett är tydligare.”
+
+--------------------------------------------------
+
+🟨 Slide 104 — Sammanfattning
+
+🗣️
+“JSX beskriver UI.”
+
+🗣️
+“Komponenter delar upp gränssnittet.”
+
+🗣️
+“Props skickar data.”
+
+--------------------------------------------------
+
+🟨 Slide 105 — Resurser
+
+🗣️
+“De här resurserna är bra för repetition.”
+
+🗣️
+“React lär man sig genom att läsa lite – och bygga mycket.”
+
+
+--------------------------------------------------
+--------------------------------------------------
+
+OBS:
+SKAPA EN NY ONSDAGS-BRANCH FÖR CODE-ALONG.
+Agenda-filer ligger kvar i main.
+
+--------------------------------------------------
+
+💻 Code-along – Start på Todo-app (React)
+
+🎯 Syfte:
+– Förstå JSX i praktiken
+– Lära sig funktionella komponenter
+– Förstå komponenttänk
+– Skicka data med props
+– Skapa struktur som vi bygger vidare på imorgon (useState)
+
+🗣️
+“Idag bygger vi grunden till en Todo-app.
+Den kommer inte vara interaktiv än – och det är helt medvetet.”
+
+“Fokus idag är struktur och tänk – inte logik.”
+
+--------------------------------------------------
+
+📁 Steg 1 – Skapa projektstruktur
+
+I src/ skapar vi:
+
+src/
+ ├─ components/
+ │   ├─ TodoApp.jsx
+ │   ├─ TodoHeader.jsx
+ │   ├─ TodoList.jsx
+ │   └─ TodoItem.jsx
+ ├─ App.jsx
+ └─ main.jsx
+
+🗣️
+“Varje fil representerar en del av gränssnittet, inte logik.”
+
+--------------------------------------------------
+
+🧩 Steg 2 – App.jsx (rotkomponent)
+
+Öppna src/App.jsx och skriv:
+
+import TodoApp from "./components/TodoApp";
+
+function App() {
+  return <TodoApp />;
+}
+
+export default App;
+
+🗣️
+“App.jsx är vår rot – men den innehåller nästan ingen logik.”
+
+--------------------------------------------------
+
+🧩 Steg 3 – TodoApp.jsx (container-komponent)
+
+Skapa src/components/TodoApp.jsx:
+
+import TodoHeader from "./TodoHeader";
+import TodoList from "./TodoList";
+
+function TodoApp() {
+  return (
+    <div>
+      <TodoHeader />
+      <TodoList />
+    </div>
+  );
+}
+
+export default TodoApp;
+
+🗣️
+“TodoApp sätter ihop flera komponenter.
+Den är som själva sidan.”
+
+--------------------------------------------------
+
+🧩 Steg 4 – TodoHeader.jsx
+
+Skapa src/components/TodoHeader.jsx:
+
+function TodoHeader() {
+  return (
+    <header>
+      <h1>My Todo App</h1>
+      <p>Saker jag behöver göra</p>
+    </header>
+  );
+}
+
+export default TodoHeader;
+
+🗣️
+“En komponent är bara en funktion som returnerar JSX.”
+
+--------------------------------------------------
+
+🧩 Steg 5 – TodoList.jsx (hårdkodad lista)
+
+Skapa src/components/TodoList.jsx:
+
+import TodoItem from "./TodoItem";
+
+function TodoList() {
+  return (
+    <ul>
+      <TodoItem text="Lära mig React" />
+      <TodoItem text="Förstå komponenter" />
+      <TodoItem text="Jobba med props" />
+    </ul>
+  );
+}
+
+export default TodoList;
+
+🗣️
+“Just nu är detta statisk data.
+Imorgon gör vi den dynamisk.”
+
+--------------------------------------------------
+
+🧩 Steg 6 – TodoItem.jsx (props)
+
+Skapa src/components/TodoItem.jsx:
+
+function TodoItem({ text }) {
+  return <li>{text}</li>;
+}
+
+export default TodoItem;
+
+🗣️
+“Props är data som skickas in i en komponent.”
+“Här är text ett värde vi bara visar upp.”
+
+--------------------------------------------------
+
+🧪 Kontrollera i webbläsaren
+
+Du ska se:
+
+My Todo App
+Saker jag behöver göra
+
+• Lära mig React
+• Förstå komponenter
+• Jobba med props
+
+--------------------------------------------------
+
+🧠 Viktiga poänger att säga högt
+
+– Varje Todo är en komponent
+– Listan vet vad som ska visas
+– TodoItem vet hur det visas
+– Inga variabler, ingen state, ingen logik – än
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧪 Testa code-along – Guide
+
+✅ Kontrollera:
+- Inga fel i konsolen
+- Rubriken “My Todo App” syns
+- Listan med todos renderas
+- Varje todo visas via TodoItem
+
+🔧 Vanliga fel:
+- Glömt export default
+- Fel import-path (./components/...)
+- Saknar root-element i JSX
+- Skrivit class istället för className
+
+--------------------------------------------------
+--------------------------------------------------
+🧠 Självständiga övningar – Todo App
+
+🟢 Nivå 1
+– Lägg till en ny TodoItem manuellt
+– Ändra texten via props
+
+🟡 Nivå 2
+– Lägg till prop: isDone
+– Visa t.ex. ✅ eller ❌ beroende på värde
+
+Exempel:
+<TodoItem text="Lära React" isDone={true} />
+
+🗣️
+“Vi använder inte detta fullt ut än – det är för tänket.”
+
+🔴 Nivå 3
+– Skicka en array av todos från TodoApp till TodoList
+– Rendera listan med .map()
+– Ingen useState än
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧠 Fördjupning / Extra övningar 
+
+Nivå 1
+- Skapa Footer.jsx
+- Skicka prop “year” och visa © {year}
+
+Nivå 2
+- Skapa Product.jsx (title, price)
+- Rendera flera produkter via props
+
+Nivå 3
+- Skapa List.jsx som tar items (array)
+- Rendera med .map() (kom ihåg key)
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 Reflektion & Q&A
+
+Diskutera i smågrupper (5 min):
+- Varför är komponenter bättre än att skriva all HTML i App.jsx?
+- När är props användbart?
+- Vad var svårast idag: JSX, import/export eller props?
+
+Helklass:
+1 insikt + 1 fråga per grupp
+
+--------------------------------------------------
+
+🔮 Brygga till torsdag
+
+🗣️
+“Idag har vi byggt ritningen.”
+“Imorgon kopplar vi på beteende.”
+
+Torsdag:
+– useState
+– inputfält
+– lägga till todos
+– ta bort todos
+– klick-events
+
+“Då blir Todo-appen på riktigt levande.”
+
+--------------------------------------------------
+--------------------------------------------------
