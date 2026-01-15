@@ -1,0 +1,421 @@
+🧭 React fortsättning – useState, Events & Kontrollerade Inputs (Re-render)
+
+⏰ Tid: 08.30–12.00
+📚 Kurs: JavaScript 2, 30 yhp
+📅 Vecka 3 – Torsdag: 2026-01-15
+🎓 Klass: FE25, KYH
+
+--------------------------------------------------
+--------------------------------------------------
+
+🎯 Lektionsmål
+
+Efter lektionen ska studenterna kunna:
+
+✅ Förklara vad state är och varför det behövs i React
+✅ Använda useState för att skapa och uppdatera state
+✅ Förstå att setState leder till re-render (UI uppdateras automatiskt)
+✅ Hantera klick-events (onClick) i React
+✅ Skapa kontrollerade inputs (value + onChange)
+✅ Bygga enkel interaktivitet: lägga till och ta bort todos
+
+--------------------------------------------------
+--------------------------------------------------
+
+📝 Lektionsplanering (08.30–12.00)
+
+08.30–08.40  Start & repetition från onsdag
+08.40–09.15  Teori + demo: State, useState, re-render (kort och tydligt)
+09.15–09.25  Paus
+
+09.25–10.25  Code-along 1: Gör Todo-appen “levande” (todos i state + render med map)
+10.25–10.35  Paus
+
+10.35–11.20  Code-along 2: Kontrollerad input + lägg till todo + remove
+11.20–11.40  Självständiga övningar (3 nivåer)
+11.40–12.00  Reflektion, Q&A + preview nästa vecka
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧠 Inledning & repetition (talarmanus)
+
+🗣️ “Igår byggde vi strukturen: komponenter och props.”
+🗣️ “Idag gör vi React interaktivt: vi lägger till state och events.”
+🗣️ “När ni kan state + events kan ni bygga riktiga UI.”
+
+Mini-frågor (2 min):
+- Vad var props?
+- Vad betyder ‘read-only’ i props?
+- Vad menar vi med att React ‘renderar om’?
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 PowerPoint (torsdag)
+Slides 107–121
+
+--------------------------------------------------
+
+🟨 Slide 107 — Vad ska vi prata om idag?
+🗣️ “Idag går vi från statiskt UI till levande UI.”
+
+🗣️ “Vi ska prata om tre saker:
+– Vad state är och varför det finns
+– Vad hooks är
+– useState – verktyget vi använder för att skapa state i funktionella komponenter.”
+
+🗣️ “Det här blocket är nyckeln till allt interaktivt i React.
+Om ni fattar state + useState + re-render, så har ni grunden.”
+
+--------------------------------------------------
+
+🟨 Slide 108 — Stateless vs stateful
+🗣️ “Alla komponenter har inte state.”
+
+🗣️ “En stateless komponent:
+– kan ta emot props
+– visar UI
+– har inget eget minne.”
+
+🗣️ “En stateful komponent:
+– äger data
+– kan förändras
+– triggar uppdateringar.”
+
+🧠 “Detta är en väldigt viktig uppdelning.”
+
+🗣️ “Det är Reacts sätt att komma ihåg saker:
+– vad användaren har skrivit
+– vad som är valt
+– vad som är klickat
+– vad som är synligt just nu.”
+
+--------------------------------------------------
+
+🟨 Slide 109 — State
+🗣️ “Stateful betyder: komponenten hanterar data som kan förändras – och det påverkar vad som renderas. Den är dynamisk.”
+
+🗣️ “Stateless betyder: komponenten renderar bara något – text eller UI – utan eget ‘minne’. Den är statisk.”
+
+--------------------------------------------------
+
+🟨 Slide 110 — Stateful
+🗣️ “Stateful = komponent med minne. Den kan ändra sitt beteende och sitt UI beroende på vad som hänt.”
+🗣️ “Exempel: en counter ser vi här.”
+
+--------------------------------------------------
+
+🟨 Slide 111 — Stateless (kodexempel)
+🗣️ “Det här är en stateless funktion – den är ett tydligt exempel på ‘ta in data → visa UI’.”
+🗣️ “Poängen är att den inte försöker hålla koll på något. Den bara renderar.”
+
+🧠 “Det här är ett designmål: håll komponenter stateless så långt du kan. Lägg state där det behövs – inte överallt.”
+🧠 “Ju fler stateless komponenter du har, desto lättare blir koden att förstå.”
+
+--------------------------------------------------
+
+🟨 Slide 112 — State
+🗣️ “På den här sliden kommer en viktig idé: komponenter med state ‘lyssnar’ på förändringar.”
+🗣️ “Det betyder inte att de har event listeners som i vanilla JS, men konceptuellt: när state ändras, då reagerar React.”
+
+🧠 “Det React gör är:
+när state ändras → React bygger en ny bild av UI (Virtual DOM) → uppdaterar det som ändrats i riktiga DOM.”
+
+--------------------------------------------------
+
+🟨 Slide 113 — Virtual DOM (första renderingen)
+🗣️ “Vid första renderingen skapar React en representation av gränssnittet.”
+🗣️ “Den representationen kan man förenklat kalla Virtual DOM. React använder den för att skapa den riktiga DOM-strukturen.”
+
+🧠 “Det viktiga här är inte termen, utan idén: React har en intern modell av UI.”
+
+--------------------------------------------------
+
+🟨 Slide 114 — Diskussionsfrågor
+
+--------------------------------------------------
+
+🟨 Slide 115 — Hooks
+🗣️ “Hooks är Reacts sätt att koppla in React-funktionalitet i funktionella komponenter.”
+🗣️ “Förr behövde man klasskomponenter för state. Nu använder vi hooks.”
+🗣️ “Ni kommer se flera hooks i kursen, men idag är fokus: useState.”
+
+--------------------------------------------------
+
+🟨 Slide 116 — useState
+🗣️ “Den här sliden säger egentligen: React måste få veta när något ska renderas om.”
+🗣️ “Vanliga variabler i JavaScript triggar inte re-render. React märker inte att ni ändrat dem.”
+
+🧠 “useState är kontraktet: ‘när jag uppdaterar state med set-funktionen – då ska UI uppdateras’.”
+
+--------------------------------------------------
+
+🟨 Slide 117 — useState (förklaring)
+🗣️ “useState är en inbyggd hook för att hantera state i funktionella komponenter.”
+🗣️ “Varje gång state uppdateras så kör React om komponenten (re-render) för att UI ska spegla den nya datan.”
+
+🧠 “Det är därför React känns ‘automatiskt’: du uppdaterar data – UI följer med.”
+
+--------------------------------------------------
+
+🟨 Slide 118 — useState (definition av state-variabel + uppdaterare)
+🗣️ “useState ger oss två saker:
+– själva värdet (state-variabeln)
+– en funktion som uppdaterar värdet.”
+
+🗣️ “Det här är mönstret ni kommer använda om och om igen.”
+
+--------------------------------------------------
+
+🟨 Slide 119 — import { useState } from 'react';
+🗣️ “Nu ser vi syntaxen.”
+
+🗣️ “Nyckeln: du ska inte ‘ändra UI’.
+Du ska uppdatera state med setValue – och React sköter UI.”
+
+--------------------------------------------------
+
+🟨 Slide 120 — useState (likes-exemplet intro)
+🗣️ “Vi tar ett exempel: likes. Varför? För att det är tydligt state.”
+🗣️ “Likes är data som förändras över tid, och som UI behöver visa.”
+
+--------------------------------------------------
+
+🟨 Slide 121 — import { useState } from "react"; (Likes-kod)
+🗣️ “Här ser ni hela kedjan:
+– state skapas (likes)
+– en event handler körs (handleClick)
+– state uppdateras (setLikes)
+– React renderar om → UI visar nya värdet.”
+
+🧠 “Det här är Reacts grundloop:
+event → setState → re-render → uppdaterat UI.”
+
+--------------------------------------------------
+--------------------------------------------------
+
+OBS:
+SKAPA EN NY TORSDAGS-BRANCH FÖR CODE-ALONG.
+Agenda-filer ligger kvar i main.
+
+--------------------------------------------------
+--------------------------------------------------
+
+💻 Code-along – Todo App (useState + interaktion)
+
+🎯 Syfte:
+– Visa skillnaden mellan “statisk UI” och “UI som styrs av state”
+– Koppla event → setState → re-render → uppdaterat UI
+– Skapa kontrollerade inputs
+
+🗣️ “Idag ska vi uppleva Reacts ‘superkraft’: vi uppdaterar state – och UI följer med automatiskt.”
+
+--------------------------------------------------
+
+✅ Förberedelser
+
+1) Öppna gårdagens projekt
+2) Kör:
+   npm install   (bara om node_modules saknas)
+   npm run dev
+
+--------------------------------------------------
+
+💻 Code-along 1: Todos i state + rendera med map()
+
+🎯 Mål:
+- Flytta listan från hårdkodade <TodoItem> till state-array
+- Rendera todos med .map()
+- Introducera “key”
+
+--------------------------------------------------
+
+🧩 Steg 1 – Lägg state i TodoApp
+
+Öppna src/components/TodoApp.jsx
+
+1) Importera useState:
+import { useState } from "react";
+
+2) Skapa state med startvärden (array av strings):
+
+const [todos, setTodos] = useState([
+  "Lära mig React",
+  "Förstå komponenter",
+  "Jobba med props"
+]);
+
+3) Skicka todos som prop till TodoList:
+<TodoList todos={todos} />
+
+🗣️ “State är data som kan förändras över tid.”
+🗣️ “Om vi vill att UI ska kunna förändras måste datan ligga i state.”
+
+--------------------------------------------------
+
+🧩 Steg 2 – Rendera listan i TodoList med map()
+
+Öppna src/components/TodoList.jsx
+
+Ändra TodoList till att ta emot props:
+
+function TodoList({ todos }) {
+  return (
+    <ul>
+      {todos.map((todo, index) => (
+        <TodoItem key={index} text={todo} />
+      ))}
+    </ul>
+  );
+}
+
+export default TodoList;
+
+🗣️ “map() gör att UI byggs från data.”
+🗣️ “key hjälper React att veta vilket item som är vilket.”
+
+--------------------------------------------------
+
+🧪 Mini-test
+- Lägg till ett fjärde värde i useState-arrayen och se att UI uppdateras direkt.
+
+🗣️ “Vi ändrade bara data – UI följde med. Det är re-render.”
+
+--------------------------------------------------
+--------------------------------------------------
+
+💻 Code-along 2: Kontrollerad input + lägg till todo + ta bort todo
+
+🎯 Mål:
+- Skapa input som styrs av state (controlled input)
+- Lägg till todo på knappklick
+- Ta bort todo via knapp
+
+--------------------------------------------------
+
+🧩 Steg 3 – Skapa input-state (newTodo)
+
+I TodoApp.jsx, lägg till ett state till:
+
+const [newTodo, setNewTodo] = useState("");
+
+Skapa ett formulär/sektion ovanför TodoList:
+
+<input
+  value={newTodo}
+  onChange={(e) => setNewTodo(e.target.value)}
+  placeholder="Skriv en todo..."
+/>
+
+<button onClick={handleAddTodo}>Lägg till</button>
+
+🗣️ “Kontrollerad input betyder att React äger värdet.”
+🗣️ “value kommer från state, onChange uppdaterar state.”
+
+--------------------------------------------------
+
+🧩 Steg 4 – Lägg till todo (handleAddTodo)
+
+Skapa funktionen i TodoApp.jsx:
+
+function handleAddTodo() {
+  const trimmed = newTodo.trim();
+  if (!trimmed) return;
+
+  setTodos([...todos, trimmed]);
+  setNewTodo("");
+}
+
+🗣️ “Vi uppdaterar state genom att skapa en ny array.”
+🗣️ “Vi muterar inte state direkt.”
+
+--------------------------------------------------
+
+🧩 Steg 5 – Ta bort todo (handleRemoveTodo)
+
+Skapa en remove-funktion:
+
+function handleRemoveTodo(indexToRemove) {
+  setTodos(todos.filter((_, index) => index !== indexToRemove));
+}
+
+Skicka ner remove-funktionen till TodoList:
+
+<TodoList todos={todos} onRemove={handleRemoveTodo} />
+
+I TodoList.jsx: skicka vidare till TodoItem:
+
+{todos.map((todo, index) => (
+  <TodoItem
+    key={index}
+    text={todo}
+    onRemove={() => onRemove(index)}
+  />
+))}
+
+I TodoItem.jsx: lägg till en knapp:
+
+function TodoItem({ text, onRemove }) {
+  return (
+    <li>
+      {text} <button onClick={onRemove}>Ta bort</button>
+    </li>
+  );
+}
+
+🗣️ “Det här visar den klassiska modellen:
+state i parent, funktioner skickas ner, events sker i child, state uppdateras i parent.”
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧪 Testa code-along – Guide
+
+✅ Kontrollera:
+- Du kan skriva i input
+- Klick “Lägg till” skapar en ny todo
+- Input töms efter add
+- “Ta bort” tar bort rätt todo
+- Inga fel i konsolen
+
+🔧 Vanliga fel:
+- Glömt import { useState } from "react"
+- Skrivit value utan onChange (låst input)
+- Muterat array (todos.push) istället för ny array
+- Glömt return i TodoItem
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧠 Självständiga övningar – useState & events (15–20 min)
+
+🟢 Nivå 1 (lätt)
+1) Lägg till en knapp: “Rensa alla” som tömmer listan
+2) Visa antal todos: “Antal: X”
+
+🟡 Nivå 2 (medel)
+1) Lägg till checkbox för “klar”
+2) Visa ✅ när en todo är klar
+(Hint: byt todos från strings till objekt: { text, done })
+
+🔴 Nivå 3 (svår)
+1) Lägg till filter-knappar: Alla / Klara / Oklara
+2) Implementera filter med state (filterState) och conditional rendering
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 Reflektion & Q&A
+
+Diskutera i smågrupper (5 min):
+- Vad händer i React när vi kör setTodos()?
+- Varför muterar vi inte state direkt?
+- Varför är input “kontrollerad”?
+
+--------------------------------------------------
+
+🔮 Preview (nästa vecka: routing)
+
+--------------------------------------------------
+--------------------------------------------------

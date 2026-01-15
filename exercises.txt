@@ -1,0 +1,30 @@
+ Testa code-along – Guide
+
+✅ Kontrollera:
+- Du kan skriva i input
+- Klick “Lägg till” skapar en ny todo
+- Input töms efter add
+- “Ta bort” tar bort rätt todo
+- Inga fel i konsolen
+
+🔧 Vanliga fel:
+- Glömt import { useState } from "react"
+- Skrivit value utan onChange (låst input)
+- Muterat array (todos.push) istället för ny array
+- Glömt return i TodoItem
+
+
+Självständiga övningar – useState & events (15–20 min)
+
+🟢 Nivå 1 (lätt)
+1) Lägg till en knapp: “Rensa alla” som tömmer listan
+2) Visa antal todos: “Antal: X”
+
+🟡 Nivå 2 (medel)
+1) Lägg till checkbox för “klar”
+2) Visa ✅ när en todo är klar
+(Hint: byt todos från strings till objekt: { text, done })
+
+🔴 Nivå 3 (svår)
+1) Lägg till filter-knappar: Alla / Klara / Oklara
+2) Implementera filter med state (filterState) och conditional rendering
